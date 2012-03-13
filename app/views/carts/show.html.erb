@@ -1,12 +1,40 @@
 <h2>Your Chocolate</h2>
 
-<ul>
+
+
+    
+    <% if notice != nil  %>
+    <p id="notice">  
+    <%=notice %>
+    </p>
+  <% end %>
+<table width="80%">
+  <tr>
+    <th align="left" width="25%" >Your Chocolates!</th>
+    <th align="left" width="25%" ></th>
+    <th align="left" width="25%" >Quantity</th>
+    <th align="left" width="25%" >Price</th>
+  </tr>  
 <% for item in @cart.line_items %>
-  <p id="notice"><%= notice %></p>
-  <li><%= item.product.title %></li>
+  <tr>
+    <td><%= image_tag(item.product.image_url, :width=>"200") %></td>
+    <td><%= item.product.title %></td>
+    <td><%= item.quantity %></td>
+    <td class="item_price"><%= number_to_currency(item.total_price) %></td>
+  </tr>
+
+
 <% end %>
-</ul>
 
+  <tr class="total_line">
+    <td colspan="2">Total</td>
+    <td></td>
+    <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
+  </tr>
 
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+</table>
+
+<%= button_to 'Empty cart', @cart, :method => :delete,
+:confirm => 'Are you sure?' %>
+<%= link_to 'Back to Store', store_path %>
+
