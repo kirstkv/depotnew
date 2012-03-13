@@ -1,4 +1,11 @@
-<p id="notice"><%= notice %></p>
+<h2>Your Chocolate</h2>
+
+<ul>
+<% for item in @cart.line_items %>
+  <p id="notice"><%= notice %></p>
+  <li><%= item.product.title %></li>
+<% end %>
+</ul>
 
 
 <%= link_to 'Edit', edit_cart_path(@cart) %> |
