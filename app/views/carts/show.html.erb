@@ -13,18 +13,10 @@
     <th align="left" width="25%" >Your Chocolates!</th>
     <th align="left" width="25%" ></th>
     <th align="left" width="25%" >Quantity</th>
-    <th align="left" width="25%" >Price</th>
-  </tr>  
-<% for item in @cart.line_items %>
-  <tr>
-    <td><%= image_tag(item.product.image_url, :width=>"200") %></td>
-    <td><%= item.product.title %></td>
-    <td><%= item.quantity %></td>
-    <td class="item_price"><%= number_to_currency(item.total_price) %></td>
+    <th align="right" width="25%" >Price</th>
   </tr>
-
-
-<% end %>
+  
+<%= render(@cart.line_items) %>
 
   <tr class="total_line">
     <td colspan="2">Total</td>

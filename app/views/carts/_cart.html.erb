@@ -1,0 +1,26 @@
+
+<table width="100%">
+  <tr>
+    <th align="left" colspan="3">Your Chocolates!</th>
+
+    <th align="right">Price</th>
+  </tr>
+  
+<%= render(@cart.line_items) %>
+
+  <tr class="total_line">
+    <td colspan="2">Total</td>
+    <td></td>
+    <td class="total_cell"><%= number_to_currency(@cart.total_price, :unit=>"&pound;") %></td>
+  </tr>
+
+</table>
+
+<div><%= button_to 'Empty cart', @cart, :method => :delete, :confirm => 'Are you sure?' %></div>
+<div><%= button_to "Checkout" , new_order_url, :method=>:get %></div>
+
+<% if notice != nil  %>
+    <p>  
+    <%=notice %>
+    </p>
+  <% end %>
