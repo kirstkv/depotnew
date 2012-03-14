@@ -1,4 +1,24 @@
 Depot::Application.routes.draw do
+  
+  get "log_in" => "sessions#new", :as => "log_in"
+  get "log_out" => "sessions#destroy", :as => "log_out"  
+  get "sign_up" => "users#new", :as => "sign_up"
+  
+
+  if :session != nil 
+    root :to => 'store#index' , :as => 'store'
+  end
+  root :to => "users#new"  
+
+
+
+
+
+
+  resources :users  
+  
+  resources :sessions
+
   resources :orders
 
   resources :line_items
@@ -9,7 +29,7 @@ Depot::Application.routes.draw do
   
   resources :carts
   
-  root :to => 'store#index' , :as => 'store'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
