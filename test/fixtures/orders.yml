@@ -1,12 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: MyString
-  address: MyText
-  email: MyString
-  pay_type: MyString
-  delivery_type: MyString
-
+  name: Bob Smith
+  address: 13 Merrybone Lane, Doncaster
+  email: Bobbie@example.com
+  pay_type: Debit Card
+  delivery_type: First Class
 two:
   name: MyString
   address: MyText
