@@ -7,7 +7,14 @@ gem 'rails', '3.0.9'
 
 gem 'sqlite3'
 gem 'json', '1.4.6'
-gem 'bcrypt-ruby', :require => 'bcrypt' 
+gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'rspec-rails'
+gem 'database_cleaner'
+gem 'cucumber-rails'
+gem 'cucumber'
+gem 'spork'
+gem 'launchy'
+gem 'capybara'
 
 # Use unicorn as the web server
 # gem 'unicorn'
