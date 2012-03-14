@@ -1,3 +1,8 @@
+<% if line_item == @current_item %>
+<tr id="current_item">
+<% else %>
+<tr>
+<% end %>
   <tr>
     <td><%= image_tag(line_item.product.image_url, :width=>"35") %></td>
     <td><%= line_item.quantity %>*<%= line_item.product.title %></td>

@@ -49,7 +49,7 @@ class LineItemsController < ApplicationController
         
         format.html { redirect_to(store_url,
         :notice => product.title+' added!' ) }
-        
+        format.js { @current_item = @line_item }
         format.xml { render :xml => @line_item,
         :status => :created, :location => @line_item }
         

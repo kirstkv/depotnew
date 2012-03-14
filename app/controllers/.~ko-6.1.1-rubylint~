@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+class StoreController < ApplicationController
+  def index
+    @products = Product.all
+    @cart = current_cart
+  end
+
+=======
 class ApplicationController < ActionController::Base
   before_filter :authorize
   
@@ -33,4 +41,5 @@ class ApplicationController < ActionController::Base
     end
   end
   
+>>>>>>> 6550304308295ed21744441badf2ce4c9bb8b22b
 end
