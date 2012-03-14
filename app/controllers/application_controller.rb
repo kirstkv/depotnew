@@ -28,8 +28,10 @@ class ApplicationController < ActionController::Base
   
   def check_admin
     user=User.find_by_id(session[:user_id])
-    unless user.role_id !=1
+    if user
+    if user.role_id =1
       redirect_to( root_url, :notice => "Not authorized user")
+    end
     end
   end
   
