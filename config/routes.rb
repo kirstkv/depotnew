@@ -29,7 +29,9 @@ Depot::Application.routes.draw do
   
   resources :carts
   
-
+  resources :users do
+    resources :roles
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

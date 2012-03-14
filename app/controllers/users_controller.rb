@@ -14,8 +14,9 @@ class UsersController < ApplicationController
     end  
   end
   
+  before_filter :check_admin
   def index
-    @users = User.order(:name)
+    @users = User.order(:username)
     respond_to do |format|
       format.html # index.html.erb
       format.xml { render :xml => @users }
