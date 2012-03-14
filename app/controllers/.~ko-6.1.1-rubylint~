@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-class StoreController < ApplicationController
-  def index
-    @products = Product.all
-    @cart = current_cart
-  end
-
-=======
 class ApplicationController < ActionController::Base
   before_filter :authorize
   
@@ -36,10 +28,13 @@ class ApplicationController < ActionController::Base
   
   def check_admin
     user=User.find_by_id(session[:user_id])
-    unless user.role_id !=1
+    if user
+    
+    if user.role_id =1
       redirect_to( root_url, :notice => "Not authorized user")
+    end
+    
     end
   end
   
->>>>>>> 6550304308295ed21744441badf2ce4c9bb8b22b
 end

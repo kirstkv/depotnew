@@ -1,0 +1,62 @@
+
+<h1>Contact Us</h1>
+
+<form method="post" action="http://www.abdn.ac.uk/~csc256/post.php">
+    <fieldset>
+    <legend>Personal Details:</legend>
+ 
+    <h2>Name:</h2>
+    <input type="text" name="name" id="name" size="30"/>
+    
+    <h2>Email:</h2>
+    <input type="text" name="email" id="email" size="30"/>
+    
+    <h2>Gender:</h2>
+    <p>
+    <input name="gender" id="gender" type="radio" value="Male" checked ="checked" /> Male
+    <input name="gender" id="gender" type="radio" value="Female" /> Female
+    </p>
+    </fieldset>
+    
+    <fieldset>
+    <legend>Message</legend>
+    <h2>What kind of music do you like?</h2>
+    <p>
+    <input name="genre[]" id=”blues” type="checkbox" value = “yes”/>
+    Blues
+    <input name="genre[]" id=“classical” type="checkbox" value = “yes”/>
+    Classical
+    <input name="genre[]" id=“country” type="checkbox" value =“yes”/>
+    Country
+    <input name="genre[]" id=”dance” type="checkbox" value = “yes”/>
+    Dance
+    <input name="genre[]" id=“hip-hop” type="checkbox" value = “yes”/>
+    Hip-Hop
+    </br>
+    <input name="genre[]" id=“jazz” type="checkbox" value =“yes”/>
+    Jazz
+    <input name="genre[]" id=”opera” type="checkbox" value = “yes”/>
+    Opera
+    <input name="genre[]" id=“randb” type="checkbox" value = “yes”/>
+    R&B
+    <input name="genre[]" id=“reggae” type="checkbox" value =“yes”/>
+    Reggae
+    <input name="genre[]" id=”rock” type="checkbox" value = “yes”/>
+    Rock
+    </p>
+    
+    <h2>Message:</h2>
+    <textarea name="message" id=“message” rows="6" cols="40">
+    No message.
+    </textarea>
+    </fieldset>
+    <p>
+    <input type="submit" value="Submit" />
+    <input type="reset" value="Clear the form" />
+    </p>
+    
+    <input type="hidden" name="username" id="username" value="t06la11" />
+    <input type="hidden" name="webmasteremail" id="webmasteremail" value="louise.anton.07@aberdeen.ac.uk" />
+    <input type="hidden" name="homepage" id="homepage" value="www.abdn.ac.uk/~t06la11/" />
+   </form>
+</body>

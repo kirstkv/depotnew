@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     end  
   end
   
-  before_filter :check_admin
+  #before_filter :check_admin
   def index
     @users = User.order(:username)
     respond_to do |format|
