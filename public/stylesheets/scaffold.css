@@ -1,4 +1,12 @@
-body { background-color: #fff; color: #333; }
+body { background-color: #fff; color: #333;
+position:fixed;
+  top:500px;
+  right:220px;
+  padding-top: 4ex;
+  padding-left: 2em;
+  padding-right: 50%;
+  padding-bottom: 5%;
+  background: white;}
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;

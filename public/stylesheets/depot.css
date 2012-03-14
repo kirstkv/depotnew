@@ -1,5 +1,9 @@
 /* Global styles */
 
+html { background-image: url(/images/background1.jpg);
+background-repeat: repeat; }
+
+
 #store #notice {
         color: #000;
         border: 2px solid red;
@@ -12,8 +16,9 @@
 
 #store h1 {
         font:  150% sans-serif;
-        color: #226;
-        border-bottom: 3px dotted #77d;
+        color: #180000;
+	padding-bottom: 5%;
+        
 }
 
 /* Styles for products/index */
@@ -64,45 +69,28 @@
   background:   #f8b0f8;
 }
 
-/* START:mainlayout */
-/* Styles for main page */
 
-#banner {
-  background: #9c9;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid;
-  font: small-caps 40px/40px "Times New Roman", serif;
-  color: #282;
-  text-align: center;
-}
 
-#banner img {
-  float: left;
-}
-
-#columns {
-  background: #141;
-}
-
+/* Styles for main part*/
 #main {
-  margin-left: 17em;
+  position:fixed;
+  top:300px;
+  left:220px;
   padding-top: 4ex;
   padding-left: 2em;
+  padding-right: 50%;
+  padding-bottom: 2%;
   background: white;
 }
 
 #side {
-  float: left;
-  padding-top: 1em;
-  padding-left: 1em;
-  padding-bottom: 1em;
-  width: 16em;
-  background: #141;
+position:fixed;
+top:250px;
+left:220px;
 }
 
 #side a {
-  color: #bfb;
+  color: #FFFFFF;
   font-size: small;
 }
 /* END:mainlayout */
@@ -131,7 +119,7 @@
 #store .entry h3 {
  margin-top: 0;
  margin-bottom: 2px;
- color: #227;
+ color: #180000;
 }
 
 #store .entry p {
@@ -149,7 +137,7 @@
 }
 
 #store .entry  .price {
-  color: #44a;
+  color:  #180000;
   font-weight: bold;
   margin-right: 2em;
 }
