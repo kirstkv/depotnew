@@ -21,17 +21,17 @@
 </div>
 <div id="columns">
 <div id="side">
-    <% if @cart %>
-    <div id="cart">
-        <%= render @cart %>
-    </div>
+<div id="cart">
+   <% if @cart %>
+    <%= hidden_div_if(@cart.line_items.empty?, :id => "cart" ) do %>
+    <%= render @cart %>
     <% end %>
-    
-    <div id="user_nav">  
-    <a href="http://www....">Home</a> &nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://www..../faq">Questions</a> &nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://www..../news">News</a> &nbsp;&nbsp;&nbsp;&nbsp;
-<a href="http://www..../contact">Contact</a> &nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+    <%=link_to "Home", :controller => "home" %><br>
+    <%=link_to "Chocolate Shop", :controller => "store" %><br>
+    <%=link_to "FAQs", :controller => "faqs" %><br>
+    <%=link_to "News", :controller => "news" %><br>
+    <%=link_to "Contact Us", :controller => "contact" %><br>
 
      <% if current_user %>  
            <p> Logged in as <%= current_user.username %></p>  
@@ -44,14 +44,6 @@
 
 
 </div>
-<!---->
-<!---->
-<!--I DON'T KNOW IF THIS SHOULD GO HERE-->
-<% if @cart %>
-<%= hidden_div_if(@cart.line_items.empty?, :id => "cart" ) do %>
-<%= render @cart %>
-<% end %>
-<% end %>
 
 <div id="main">
 <%= yield %>

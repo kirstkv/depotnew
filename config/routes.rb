@@ -1,5 +1,13 @@
 Depot::Application.routes.draw do
   
+  get "news/index"
+
+  get "contact/index"
+
+  get "faqs/index"
+
+  get "home/index"
+
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"  
   get "sign_up" => "users#new", :as => "sign_up"
@@ -32,6 +40,8 @@ Depot::Application.routes.draw do
   resources :users do
     resources :roles
   end
+  
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
