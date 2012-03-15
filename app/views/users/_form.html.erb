@@ -1,0 +1,25 @@
+<%= form_for @user, :as => :user do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%=@user.username%>
+  </div>
+
+  <div class="field">
+          <%= f.radio_button :role_id, (1 if :role_id ==1), :value => 1 %>Customer
+          <%= f.radio_button :role_id, (2 if :role_id !=1), :value => 2 %>Admin
+  </div>
+  <div class="actions">
+    <%= f.submit 'Change Admin'%>
+  </div>
+<% end %>

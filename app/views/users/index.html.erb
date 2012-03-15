@@ -6,10 +6,12 @@
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
     <% @users.each do |user| %>
     <tr>
       <td><%= user.username %></td>
+      <th><%= user.role_id %></th>
       <td><%if user.role_id ==1 %>
           Customer
         <% else %>
