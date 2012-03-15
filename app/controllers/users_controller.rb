@@ -28,7 +28,11 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
+
         format.html { redirect_to(users_path, :notice => 'User was successfully updated.') }
+
+        format.html { redirect_to(users_path, :notice => 'Item was successfully updated. '+@user.role_id.to_s)}
+
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -36,6 +40,7 @@ class UsersController < ApplicationController
       end
     end
   end
+
     
   def destroy
     @user = User.find(params[:id])
@@ -50,5 +55,6 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
+
 
 end

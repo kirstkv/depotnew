@@ -53,12 +53,18 @@ class OrdersController < ApplicationController
     @order = Order.new(params[:order])
     @order.name=current_user.username
     @order.add_line_items_from_cart(current_cart)
-    
+    @cart= Cart.find(session[:cart_id])
     respond_to do |format|
       if @order.save
+<<<<<<< HEAD
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         format.html { redirect_to(@order, :notice => 'Thank you for your order.' ) }
+=======
+        #Cart.destroy(session[:cart_id])
+        #session[:cart_id] = nil
+        format.html { redirect_to("/invoice/index", :notice => 'Thank you for your order.' ) }
+>>>>>>> 0ae0a1896335c528341d4ac0c11baefb263486dc
         format.xml  { render :xml => @order, :status => :created, :location => @order }
       else
         format.html { render :action => "new" }
