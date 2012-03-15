@@ -11,20 +11,19 @@
     <% @users.each do |user| %>
     <tr>
       <td><%= user.username %></td>
-<<<<<<< HEAD
+
       <th><%= user.role_id %></th>
       <td><%if user.role_id ==1 %>
           Customer
         <% else %>
           admin
-=======
       <td>
         <%= form_for(user) do |f| %>
         
           <%= f.radio_button :role_id, (1 if user.role_id ==1), :value => 1 %>Customer
           <%= f.radio_button :role_id, (2 if user.role_id !=1), :value => 2 %>Admin
           <%= f.submit "Change Role" %>
->>>>>>> 0ae0a1896335c528341d4ac0c11baefb263486dc
+
         <% end %>
       </td>
       <td><%= link_to 'Show', user %></td>

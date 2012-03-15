@@ -1,30 +1,21 @@
 /* Global styles */
-
-html { background-image: url(/images/background1.jpg);
-background-repeat: repeat; }
-
-#wholepage {
-	max-width:500px;
-}
-#nav {
-	width:100%;
+#store {
+	background-image:
 }
 
 #store #notice {
-        color: #000;
-        border: 2px solid red;
+        color: #330000;
+        border: none;
         padding: 1em;
         margin-bottom: 2em;
-        background-color: #f0f0f0;
         font: bold smaller sans-serif;
 }
 
 
 #store h1 {
         font:  150% sans-serif;
-        color: #180000;
-	padding-bottom: 5%;
-        
+        color: #330000;
+        border-bottom: 3px dotted #77d;
 }
 
 /* Styles for products/index */
@@ -52,7 +43,7 @@ background-repeat: repeat; }
 }
 
 #product_list .list_description dt {
-	color:        #244;
+
 	font-weight:  bold;
 	font-size:    larger;
 }
@@ -68,59 +59,59 @@ background-repeat: repeat; }
 }
 
 #product_list .list_line_even {
-  background:   #e0f8f8;
+  background:   #ffcc99;
 }
 
 #product_list .list_line_odd {
-  background:   #f8b0f8;
+  background:   #CC9966;
 }
 
+/* START:mainlayout */
+/* Styles for main page */
 
+#logo {
+	float:left;
+}
+#banner {
+  background: #CC9966;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid;
+  font: small-caps 40px/40px "Times New Roman", serif;
+  color: #CC9966;
+  text-align: center;
+  height:110px;
+}
 
-/* Styles for main part*/
+#banner img {
+  float: left;
+}
+
+#columns {
+  background: #CC9966;
+}
+
 #main {
-  position:fixed;
-  top:600px;
-  left:220px;
+  margin-left: 17em;
   padding-top: 4ex;
   padding-left: 2em;
-  padding-right: 749px;
-  padding-bottom: 2%;
   background: white;
+  min-width:500px;
 }
-
-#girl {
-position:fixed;
-top:280px;
-left:220px;
-
-padding-right: 290px;
-}
-
 
 #side {
-position:fixed;
-top:250px;
-left:220px;
-padding-bottom:5%;
-padding-right: 390px;
+  float: left;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  width: 200px;
+  background: #633333;
 }
-
 
 #side a {
-  color: #FFFFFF;  
+  color: #bfb;
   font-size: small;
-  text-decoration: none
 }
-
-#side {
-position:fixed;
-background-color:brown;
-top:250px;
-left:220px;
-}
-
-
 /* END:mainlayout */
 
 /* An entry in the store catalog */
@@ -147,7 +138,7 @@ left:220px;
 #store .entry h3 {
  margin-top: 0;
  margin-bottom: 2px;
- color: #180000;
+ color: #227;
 }
 
 #store .entry p {
@@ -165,7 +156,7 @@ left:220px;
 }
 
 #store .entry  .price {
-  color:  #180000;
+  color: #44a;
   font-weight: bold;
   margin-right: 2em;
 }
@@ -223,7 +214,6 @@ margin: 0.5em 0;
 
 
 ul, ol {
-	font-size: .75em;
 	margin-bottom: 1.5em;
 	display:inline;
 }
@@ -231,19 +221,3 @@ li {
 	margin-bottom: .5em;
 	display:inline;
 }
-
-
-#main {
-	float:right;
-	width:80%;
-	
-}
-#secondary {
-
-	float:left;
-	width:20%;
-	
-}
-#footer {
-	text-align:center;
-	clear:both;

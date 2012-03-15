@@ -18,6 +18,7 @@ gem 'cucumber'
 gem 'spork'
 gem 'launchy'
 gem 'capybara'
+gem 'ffi', '1.0.9'
 
 
 # Use unicorn as the web server
