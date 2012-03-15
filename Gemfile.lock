@@ -70,6 +70,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.32)
+    will_paginate (3.0.3)
 
 PLATFORMS
   x86-mingw32
@@ -79,3 +80,4 @@ DEPENDENCIES
   json (= 1.4.6)
   rails (= 3.0.9)
   sqlite3
+  will_paginate (>= 3.0.pre)

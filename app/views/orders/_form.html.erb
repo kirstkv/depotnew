@@ -10,7 +10,12 @@
       </ul>
     </div>
   <% end %>
-
+  <p>Form for <%=current_user.username %>, order number <%=@order.id %> 
+  <%for item in @order.line_items %>
+  title<%=  item.product.title %>
+  quant<%= item.quantity %>
+  cost<%=  number_to_currency item.total_price %></p>
+  <% end %>
   <div class="field">
     <%= f.label :name, "Name" %><br />
     <%= f.text_field :name %>
@@ -42,4 +47,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+  
 <% end %>

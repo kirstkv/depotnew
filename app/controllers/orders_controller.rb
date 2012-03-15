@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.xml
   def index
-    @orders = Order.all
+    @orders = Order.paginate :page=>params[:page], :order=>'created_at desc' , :per_page => 10
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,11 +14,17 @@ class OrdersController < ApplicationController
   # GET /orders/1.xml
   def show
     @order = Order.find(params[:id])
+    #@order.name=current_user.username
+    #@order.add_line_items_from_cart(current_cart)
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @order }
-    end
+      #if @order.save
+
+        #format.html { redirect_to(:action=>'show', :notice => 'Thank you for your order.' ) }
+        #format.xml  { render :xml => @order, :status => :created, :location => @order }
+      #else
+        #format.html { render :action => "new" }
+        #format.xml  { render :xml => @order.errors, :status => :unprocessable_entity }
+      #end
   end
 
   # GET /orders/new
@@ -45,13 +51,14 @@ class OrdersController < ApplicationController
   # POST /orders.xml
   def create
     @order = Order.new(params[:order])
+    @order.name=current_user.username
     @order.add_line_items_from_cart(current_cart)
     
     respond_to do |format|
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        format.html { redirect_to(store_url, :notice => 'Thank you for your order.' ) }
+        format.html { redirect_to(@order, :notice => 'Thank you for your order.' ) }
         format.xml  { render :xml => @order, :status => :created, :location => @order }
       else
         format.html { render :action => "new" }

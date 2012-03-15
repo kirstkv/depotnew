@@ -2,17 +2,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Pragprog Books Online Store</title>
+<title>Chocolate World</title>
 <%= stylesheet_link_tag "scaffold" %>
 <%= stylesheet_link_tag "depot" , :media => "all" %>
 <%= javascript_include_tag :defaults %>
 <%= csrf_meta_tag %>
 </head>
 <body id="store">
+    
+<div class="wholepage">
+<div id="tallgap"></div>
 <div id="banner">
     <div>
-        <%= image_tag("logo.png" ) %>
-        <%= @page_title || "Pragmatic Bookshelf" %>
         <% flash.each do |name, msg| %>  
             <%= content_tag :div, msg, :id => "flash#{name}" %>  
         <% end %> 
@@ -28,26 +29,33 @@
     <% end %>
 <% end %> 
 </div>
-    <%=link_to "Home", :controller => "home" %><br>
-    <%=link_to "Chocolate Shop", :controller => "store" %><br>
-    <%=link_to "FAQs", :controller => "faqs" %><br>
-    <%=link_to "News", :controller => "news" %><br>
-    <%=link_to "Contact Us", :controller => "contact" %><br>
-    <div id="user_nav">  
-        <% if current_user %>  
-            <p>Logged in as <%= current_user.username %></p>  
-            <%= link_to "Log out", log_out_path %>  
-        <% else %>  
-            <%= link_to "Sign up", sign_up_path %> or   
-        <%= link_to "Log in", log_in_path %>  
-        <% end %>  
-    </div>  
+ <div id="user_nav">
+    &nbsp;
+			<ul id="nav">
+				
+				<li><%=link_to "Home", :controller => "home" %> &nbsp;&nbsp;&nbsp;&nbsp;</li>
+				<li><%=link_to "Chocolate Shop", :controller => "store" %>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+				<li><%=link_to "FAQs", :controller => "faqs" %>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+				<li><%=link_to "News", :controller => "news" %>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+				<li><%=link_to "Contact Us", :controller => "contact" %>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+				<% if current_user %>  
+				<li>Logged in as <%= current_user.username %></li>  
+				<li><%= link_to "Log out", log_out_path %>  &nbsp;&nbsp;&nbsp;&nbsp;</li>
+				<% else %>  
+				<li><%= link_to "Sign up", sign_up_path %>  &nbsp;&nbsp;&nbsp;&nbsp;</li>
+				<li><%= link_to "Log in", log_in_path %></li>
+				<% end %>  
+			</ul><!--end navigation-->
 
 
 </div>
+<div id="girl"><%= image_tag("girl.jpg" ) %>
+</div>
+
 
 <div id="main">
 <%= yield %>
+</div>
 </div>
 </div>
 </body>

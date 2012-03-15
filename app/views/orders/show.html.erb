@@ -1,4 +1,35 @@
-<p id="notice"><%= notice %></p>
+<p>Thanks, <%= current_user.username %>!<p>
+<p>You ordered </p>
+<table><% y=0 %>
+<% @order.line_items.each do |line_item| %>
+  <tr>
+    <td><%= image_tag(line_item.product.image_url, :width=>"35") %></td>
+    <td><%= line_item.quantity %>X<%= line_item.product.title %></td>
+    <td></td>
+    <td><%= number_to_currency(line_item.total_price, :unit=>"&pound;") %><% y=y+line_item.total_price %></td>
+  </tr>
+<% end %>
+  <tr>
+    <td></td>
+    <td colspan="2"><%= @order.delivery_type %></td>
+    <td>
+        <% if @order.delivery_type=='Next Day'%>
+          &pound;<% x=5.99 %><%= x %>
+        <% elsif @order.delivery_type=='First Class'%>
+          &pound;<% x=2.99 %><%= x %>
+        <% elsif @order.delivery_type=='Second Class'%> 
+          &pound;<% x=1.99 %><%= x %>
+        <% end %>
+        </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td colspan="2"><strong>Total</strong></td>
+    <td><%=number_to_currency(x+y, :unit=>"&pound;")%></td>
+  </tr>
+    
+</table>
+
 
 <p>
   <b>Name:</b>
@@ -20,11 +51,5 @@
   <%= @order.pay_type %>
 </p>
 
-<p>
-  <b>Delivery type:</b>
-  <%= @order.delivery_type %>
-</p>
-
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to 'Edit', edit_order_path(@order) %>
+<%= link_to 'Back to the Store!', store_path %>

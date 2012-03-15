@@ -16,7 +16,11 @@ Depot::Application.routes.draw do
   if :session != nil 
     root :to => 'store#index' , :as => 'store'
   end
-  root :to => "users#new"  
+  root :to => "users#new"
+  
+  resources :products do
+    get :order_record, :on => :member
+  end
 
 
 

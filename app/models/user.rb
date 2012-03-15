@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :orders
+  
   attr_accessible :username, :password, :password_confirmation
   
   attr_accessor :password

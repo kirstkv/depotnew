@@ -7,7 +7,8 @@ gem 'rails', '3.0.9'
 
 gem 'sqlite3'
 gem 'json', '1.4.6'
-gem 'bcrypt-ruby', :require => 'bcrypt' 
+gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'will_paginate' , '>= 3.0.pre'
 
 # Use unicorn as the web server
 # gem 'unicorn'
