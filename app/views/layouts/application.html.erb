@@ -17,6 +17,7 @@
 	    <li><%=link_to "Chocolate Shop", :controller => "store" %>&nbsp;&nbsp;&nbsp;&nbsp;</li>
 	    <li><%=link_to "FAQs", :controller => "faqs" %>&nbsp;&nbsp;&nbsp;&nbsp;</li>
 	    <li><%=link_to "News", :controller => "news" %>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+	    <li><%=link_to "Find Us", :controller => "findus" %>&nbsp;&nbsp;&nbsp;&nbsp;</li>
 	    <li><%=link_to "Contact Us", :controller => "contact" %>&nbsp;&nbsp;&nbsp;&nbsp;</li>
 	</ul>
 	<br />
@@ -34,6 +35,7 @@
 		<% if user.role_id!=1 %>
 		    <li><%= link_to "Users", users_path %>&nbsp;&nbsp;&nbsp;&nbsp;</li>
 		    <li><%= link_to "Products", products_path %>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+		    <li><%= link_to "Orders", orders_path %>&nbsp;&nbsp;&nbsp;&nbsp;</li>
 		<%end %>
 	    <% end %>
 	</ul>

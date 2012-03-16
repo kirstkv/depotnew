@@ -1,15 +1,16 @@
-<% if notice %>
-<p id="notice"><%= notice %></p>
-<% end %>
 <h1>Chocolate World Products!</h1>
 <% @products.each do |product| %>
 <div class="entry">
-<a href="<%=line_items_path(:product_id => product, :confirm=>" ") -%>" alt="Add to Cart"><%= image_tag(product.image_url) %></a>
+<%= image_tag(product.image_url, :width =>'500') %>
 <h3><%= product.title %></h3>
 <%=sanitize product.description %>
 <div class="price_line">
 <span class="price" ><%= number_to_currency(product.price, :unit=>"&pound;") %></span>
+<% if current_user %> 
 <%= button_to 'Add to Cart', line_items_path(:product_id => product),:remote => true %>
+<% else %>
+<%= button_to 'Log in to add items!', sessions_path %>
+<% end%>
 </div>
 </div>
 <% end %>

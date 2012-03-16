@@ -20,6 +20,9 @@ gem 'launchy'
 gem 'capybara'
 gem 'ffi', '1.0.9'
 
+gem 'rss/1.0'
+gem 'rss/2.0'
+gem 'open-uri'
 
 # Use unicorn as the web server
 # gem 'unicorn'
