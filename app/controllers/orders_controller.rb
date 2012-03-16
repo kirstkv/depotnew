@@ -1,30 +1,10 @@
 class OrdersController < ApplicationController
-  # GET /orders
-  # GET /orders.xml
-  def index
-    @orders = Order.paginate :page=>params[:page], :order=>'created_at desc' , :per_page => 10
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @orders }
-    end
-  end
+ 
 
   # GET /orders/1
   # GET /orders/1.xml
   def show
     @order = Order.find(params[:id])
-    #@order.name=current_user.username
-    #@order.add_line_items_from_cart(current_cart)
-
-      #if @order.save
-
-        #format.html { redirect_to(:action=>'show', :notice => 'Thank you for your order.' ) }
-        #format.xml  { render :xml => @order, :status => :created, :location => @order }
-      #else
-        #format.html { render :action => "new" }
-        #format.xml  { render :xml => @order.errors, :status => :unprocessable_entity }
-      #end
   end
 
   # GET /orders/new
@@ -95,4 +75,16 @@ class OrdersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+ before_filter :check_admin
+ 
+  def index
+    @orders = Order.paginate :page=>params[:page], :order=>'created_at desc' , :per_page => 10
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @orders }
+    end
+  end
+  
 end

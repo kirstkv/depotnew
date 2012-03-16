@@ -8,14 +8,12 @@ Depot::Application.routes.draw do
   get "faqs/index"
 
   get "home/index"
-
-  get "invoice/index"
-
-
+  
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"  
   get "sign_up" => "users#new", :as => "sign_up"
-  
+    
+
 
   if :session != nil 
     root :to => 'store#index' , :as => 'store'
@@ -49,6 +47,10 @@ Depot::Application.routes.draw do
     resources :roles
   end
   
+  match '*a', :to => 'application#routing'
+
+
+
   
 
   # The priority is based upon order of creation:

@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user
   
+  def routing
+    redirect_to( root_url, :notice => "Page not found")
+  end
+  
   private
 
   def current_cart 
@@ -30,7 +34,7 @@ class ApplicationController < ActionController::Base
     user=User.find_by_id(session[:user_id])
     if user
     
-    if user.role_id =1
+    if user.role_id ==1
       redirect_to( root_url, :notice => "Not authorized user")
     end
     

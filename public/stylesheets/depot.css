@@ -1,7 +1,14 @@
 /* Global styles */
+body {
+	background-image: url('../images/banner1.jpg');
+	background-repeat: repeat;
+}
+
 #store {
 	background-image:
 }
+
+
 
 #store #notice {
         color: #330000;
@@ -15,7 +22,6 @@
 #store h1 {
         font:  150% sans-serif;
         color: #330000;
-        border-bottom: 3px dotted #77d;
 }
 
 /* Styles for products/index */
@@ -59,11 +65,11 @@
 }
 
 #product_list .list_line_even {
-  background:   #ffcc99;
+  background:   #EBD1E1;
 }
 
 #product_list .list_line_odd {
-  background:   #CC9966;
+  background:   #DCCCF0;
 }
 
 /* START:mainlayout */
@@ -73,14 +79,16 @@
 	float:left;
 }
 #banner {
-  background: #CC9966;
+  background: #660C63;
+  background-image: url('../images/title.jpg');
+  background-repeat: no-repeat;
   padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 2px solid;
   font: small-caps 40px/40px "Times New Roman", serif;
-  color: #CC9966;
+  color: pink;
   text-align: center;
-  height:110px;
+  height:80px;
 }
 
 #banner img {
@@ -92,9 +100,9 @@
 }
 
 #main {
-  margin-left: 17em;
-  padding-top: 4ex;
-  padding-left: 2em;
+	
+  padding-top: 10px;
+  padding-left: 10px;
   background: white;
   min-width:500px;
 }
@@ -104,13 +112,16 @@
   padding-top: 1em;
   padding-left: 1em;
   padding-bottom: 1em;
-  width: 200px;
-  background: #633333;
+  width: 250px;
+  background-image: url('../images/banner1.jpg');
+  background-repeat: repeat-y;
+  height: 600px;
 }
 
 #side a {
   color: #bfb;
   font-size: small;
+  
 }
 /* END:mainlayout */
 
@@ -119,7 +130,7 @@
 #store  .entry {
   overflow: auto;
   margin-top: 1em;
-  border-bottom: 1px dotted #77d;
+ 
 }
 
 #store  .title {
@@ -156,7 +167,7 @@
 }
 
 #store .entry  .price {
-  color: #44a;
+  color: pink;
   font-weight: bold;
   margin-right: 2em;
 }
@@ -175,7 +186,7 @@ text-align: right;
 }
 #store .total_line .total_cell {
 font-weight: bold;
-border-top: 1px solid #595;
+border-top: 1px solid;
 }
 
 #cart, #cart table {
@@ -185,13 +196,19 @@ width: 30%;
 
 }
 #cart table {
-border-top: 1px dotted #595;
-border-bottom: 1px dotted #595;
+border-top: 1px solid #FFFFFF;
+border-bottom: 1px solid #FFFFFF;
 margin-bottom: 10px;
 }
 
+#navigation {
+	float:right;
+	position:relative;
+	max-width:400;
+}
+
 .depot_form fieldset {
-background: #efe;
+background: #FF63A2;
 }
 
 .depot_form label {

@@ -1,17 +1,5 @@
 class CartsController < ApplicationController
 
-
-  def index
-    @carts = Cart.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @carts }
-    end
-  end
-
-
-
   def show
     begin
       @cart= Cart.find(session[:cart_id])
@@ -90,5 +78,17 @@ class CartsController < ApplicationController
       format.xml { head :ok }
     end
   end
+
+ before_filter :check_admin
+  
+  def index
+    @carts = Cart.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @carts }
+    end
+  end
+
   
 end
